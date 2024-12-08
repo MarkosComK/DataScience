@@ -1,0 +1,12 @@
+version: '3.8'  # Docker Compose version
+
+services:       # Define your services/containers
+  db:          # Service name
+    build: .   # Build from Dockerfile in current directory
+    ports:     # Port mapping
+      - "5432:5432"  # host:container
+    volumes:   # Persistent storage
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:       # Define volumes
+  postgres_data:  # Volume name
