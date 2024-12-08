@@ -1,5 +1,6 @@
 # PostgreSQL data directory
 /data
+/subject
 
 # Environment variables
 .env
