@@ -2,7 +2,12 @@ version: '3.8'  # Docker Compose version
 
 services:       # Define your services/containers
   db:          # Service name
+    image: postgres:latest
     build: .   # Build from Dockerfile in current directory
+    environment:
+      - POSTGRES_DB=piscineds
+      - POSTGRES_USER=marsoare
+      - POSTGRES_PASSWORD=secret
     ports:     # Port mapping
       - "5432:5432"  # host:container
     volumes:   # Persistent storage
