@@ -12,9 +12,12 @@ def connect_db(db_params):
 		print(f"Connection failed {error}")
 
 def open_file(file_path):
-	with open(file_path, "r") as file:
-		line = file.readline()
-		print(line)
+	try:
+		with open(file_path, "r") as file:
+			line = file.readline()
+			print(line)
+	except Exception as error:
+		print(f"Error while opening file: {error}")
 
 def __main__():
 	db_params = {
